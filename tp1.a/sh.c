@@ -97,29 +97,29 @@ runcmd(struct cmd *cmd)
      * TAREFA4: Implemente codigo abaixo para executar
      * comando com pipes. */
 
-    pid_t pid1, pid2;
-    int pipefd[2];
-    pipe(pipefd);
+    int pipes[2];
+    pid_t pid_1, pid_2;
+    pipe(pipes);
 
-    pid1 = fork();
-    if (pid1 == 0) {
-       dup2(pipefd[1], STDOUT_FILENO);
-       close(pipefd[0]);
+    pid_1 = fork();
+    if (pid_1 == 0) {
+       dup2(pipes[1], STDOUT_FILENO);
+       close(pipes[0]);
        runcmd(pcmd->left);
     }
 
-    pid2 = fork();
-    if (pid2 == 0) {
-       dup2(pipefd[0], STDIN_FILENO);
-       close(pipefd[1]);
+    pid_2 = fork();
+    if (pid_2 == 0) {
+       dup2(pipes[0], STDIN_FILENO);
+       close(pipes[1]);
        runcmd(pcmd->right);
     }
 
-    close(pipefd[0]);
-    close(pipefd[1]);
+    close(pipes[0]);
+    close(pipes[1]);
 
-    waitpid(pid1, &pipefd[0], 0);
-    waitpid(pid2, &pipefd[1], 0);
+    waitpid(pid_1, &pipes[0], 0);
+    waitpid(pid_2, &pipes[1], 0);
 
     /* MARK END task4 */
     break;

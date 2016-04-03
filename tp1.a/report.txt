@@ -1,0 +1,22 @@
+RELATÓRIO
+
+1. Termo de compromisso
+
+Os membros do grupo afirmam que todo o código desenvolvido para este
+trabalho é de autoria própria.  Exceto pelo material listado no item 3
+deste relatório, os membros do grupo afirmam não ter copiado
+material da Internet nem obtiveram código de terceiros.
+
+2. Membros do grupo e alocação de esforço
+
+André Taiar Marinho Olveira <andre.taiar@gmail.com> 100%
+
+3. Referências bibliográficas
+
+Manuais do Unix.
+
+4. Estruturas de dados
+
+Não foi preciso implementar nenhuma estrutura de dados neste trabalho. Foram 
+feitas apenas chamadas de funções, fluxos de controle e utilização de comandos 
+do UNIX.
