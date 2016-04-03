@@ -75,7 +75,6 @@ runcmd(struct cmd *cmd)
      * TAREFA2: Implemente codigo abaixo para executar
      * comandos simples. */
     execvp(ecmd->argv[0], ecmd->argv);
-    fprintf(stderr, "exec nao implementado\n");
     /* MARK END task2 */
     break;
 
@@ -85,7 +84,16 @@ runcmd(struct cmd *cmd)
     /* MARK START task3
      * TAREFA3: Implemente codigo abaixo para executar
      * comando com redirecionamento. */
-    fprintf(stderr, "redir nao implementado\n");
+    if(rcmd->type == '<') {
+      int fd0 = open(rcmd->file, O_RDONLY, 0);
+      dup2(fd0, STDIN_FILENO);
+      close(fd0);
+    } 
+    else if(rcmd->type == '>') {
+      int fd1 = creat(rcmd->file, 0644);
+      dup2(fd1, STDOUT_FILENO);
+      close(fd1);
+    }
     /* MARK END task3 */
     runcmd(rcmd->cmd);
     break;
