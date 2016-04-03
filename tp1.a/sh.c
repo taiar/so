@@ -151,6 +151,14 @@ main(void)
     /* TAREFA1: O que faz o if abaixo e por que ele é necessário?
      * Insira sua resposta no código e modifique o fprintf abaixo
      * para reportar o erro corretamente. */
+
+     /**
+      * O if a seguir é necessário pois o comando "cd" não corresponde à um
+      * programa do sistema UNIX que pode ser invocado como os outros programas
+      * simples que utilizamos como execcmd. Dessa forma, para executar uma 
+      * mudança de diretórios, é necessário utilizar uma outra função do 
+      * sistema, a chdir.
+      */
     if(buf[0] == 'c' && buf[1] == 'd' && buf[2] == ' '){
       buf[strlen(buf)-1] = 0;
       if(chdir(buf+3) < 0)
