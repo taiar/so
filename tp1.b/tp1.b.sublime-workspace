@@ -1,0 +1,997 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"clie",
+				"client_secret"
+			],
+			[
+				"youtube",
+				"youtube_authorization_code"
+			],
+			[
+				"Agenda",
+				"Agendamento_skol_verao"
+			],
+			[
+				"Ver",
+				"Verão"
+			],
+			[
+				"S",
+				"Skol_verao_registro"
+			],
+			[
+				"arra",
+				"arrayDeRegistros"
+			],
+			[
+				"pri",
+				"print_r"
+			],
+			[
+				"n",
+				"n_hab"
+			],
+			[
+				"Opera",
+				"Operação"
+			],
+			[
+				"horarios",
+				"horarios_skol_verao"
+			],
+			[
+				"al",
+				"alt	Attr"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "dccthread.h",
+			"settings":
+			{
+				"buffer_size": 1470,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "dccthread.c",
+			"settings":
+			{
+				"buffer_size": 456,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.c",
+			"settings":
+			{
+				"buffer_size": 117,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 148.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"coffe",
+				"Coffee: Check Syntax"
+			],
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"python",
+				"Set Syntax: Python"
+			],
+			[
+				"wra",
+				"Auto Wrap: Toggle"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"lan",
+				"Dictionaries: Set Language"
+			],
+			[
+				"Snippet: Bibtex mi",
+				"Snippet: BibTeX Misc"
+			],
+			[
+				"diction",
+				"Dictionaries: Set Language"
+			],
+			[
+				"wrap",
+				"Auto Wrap: Toggle"
+			],
+			[
+				"lang",
+				"Dictionaries: Set Language"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"run",
+				"Dart: Run (This File)"
+			],
+			[
+				"dart",
+				"Dart: Run"
+			],
+			[
+				"syntap ",
+				"Set Syntax: PHP"
+			],
+			[
+				"dictiona",
+				"Dictionaries: Set Language"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown"
+			],
+			[
+				"dictions",
+				"Dictionaries: Set Language"
+			],
+			[
+				"auto",
+				"Auto Wrap: Toggle"
+			],
+			[
+				"autow",
+				"Auto Wrap: Toggle"
+			],
+			[
+				"markdown previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ceyl",
+				"Set Syntax: Ceylon"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			]
+		],
+		"width": 453.0
+	},
+	"console":
+	{
+		"height": 132.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/taiar/dev/ufmg/so/tp1.b"
+	],
+	"file_history":
+	[
+		"/home/taiar/dev/ufmg/so/tp1.a/sh.c",
+		"/home/taiar/dev/ufmg/so/tp1.b/dccthread.h",
+		"/home/taiar/dev/ufmg/so/tp1.a/report.txt",
+		"/home/taiar/dev/ufmg/so/tp1.a/teste.sh",
+		"/home/taiar/dev/ufmg/so/tp1.a/simple_test.sh",
+		"/home/taiar/dev/ufmg/so/tp1.a/pipo.c",
+		"/home/taiar/dev/ufmg/so/tp1.a/Makefile",
+		"/home/taiar/dev/ufmg/so/tp1.a/forkpipe.c",
+		"/home/taiar/dev/taiar.github.com/_posts/2015-10-09-ceylon-programming-language.md",
+		"/home/taiar/dev/taiar.github.com/_posts/2015-10-26-dart-programming-language.md",
+		"/home/taiar/dev/taiar.github.com/_posts/2015-11-02-dart-programming-language-usage.md",
+		"/home/taiar/dev/taiar.github.com/_posts/2015-11-09-elixir-programming-language.md",
+		"/home/taiar/dev/taiar.github.com/_posts/2015-12-05-elixir-programming-language-usage.md",
+		"/home/taiar/dev/taiar.github.com/_posts/2015-12-06-rust-programming-language.md",
+		"/home/taiar/dev/taiar.github.com/_posts/2015-12-13-rust-programming-language-usage.md",
+		"/home/taiar/dev/taiar.github.com/_site/snippets/2014/07/07/git-snippets.html",
+		"/home/taiar/dev/taiar.github.com/_posts/2014-07-07-git-snippets.md",
+		"/home/taiar/dev/ah/app/views/user_configs/_form.html.erb",
+		"/home/taiar/dev/ah/app/views/user_configs/show.html.erb",
+		"/home/taiar/dev/ah/app/views/home/month.html.erb",
+		"/home/taiar/dev/ah/app/controllers/user_configs_controller.rb",
+		"/home/taiar/dev/ah/app/models/user_config.rb",
+		"/home/taiar/dev/ah/db/migrate/20160327221858_add_dias_uteis_mes_atual_user_config.rb",
+		"/home/taiar/dev/ah/db/migrate/20160316103923_create_user_configs.rb",
+		"/home/taiar/dev/ah/db/migrate/20160308112851_create_checkins.rb",
+		"/home/taiar/dev/ah/app/controllers/checkins_controller.rb",
+		"/home/taiar/dev/ah/app/views/checkins/_form.html.erb",
+		"/home/taiar/dev/ah/app/models/checkin.rb",
+		"/home/taiar/dev/ufmg/so/tp1.a/.gitignore",
+		"/home/taiar/dev/ah/config/routes.rb",
+		"/home/taiar/dev/ah/config/application.rb",
+		"/home/taiar/dev/ah/app/views/checkins/index.html.erb",
+		"/home/taiar/dev/ah/app/views/layouts/application.html.erb",
+		"/home/taiar/dev/ah/.rspec",
+		"/home/taiar/dev/ah/app/models/user.rb",
+		"/home/taiar/dev/ah/Gemfile",
+		"/home/taiar/dev/ah/config/database.yml",
+		"/home/taiar/dev/ah/app/views/home/index.html.erb",
+		"/home/taiar/dev/ah/app/helpers/home_helper.rb",
+		"/home/taiar/dev/ah/app/views/checkins/show.json.jbuilder",
+		"/home/taiar/dev/ah/app/controllers/home_controller.rb",
+		"/home/taiar/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/taiar/dev/appprova/appprova/config/database.yml",
+		"/home/taiar/dev/appprova/appprova/Gemfile",
+		"/home/taiar/dev/wm2a/app/controllers/connections_controller.rb",
+		"/home/taiar/dev/appprova/appprova/config/initializers/devise_token_authenticatable.rb",
+		"/home/taiar/dev/appprova/appprova/config/initializers/backtrace_silencers.rb",
+		"/home/taiar/dev/appprova/appprova/config/initializers/abstract_mysql2_adapter.rb",
+		"/home/taiar/dev/phila/bootstrap.php",
+		"/home/taiar/dev/tag/programas/application/core/MY_Controller.php",
+		"/home/taiar/dev/tag/programas/application/config/routes.php",
+		"/home/taiar/dev/tag/programas/application/config/autoload.php",
+		"/home/taiar/dev/tag/new/application/config/database.php",
+		"/home/taiar/dev/phila/carregador_povoadores.php",
+		"/home/taiar/dev/phila/module/Nucleo/src/Nucleo/Entity/Entidade.php",
+		"/home/taiar/dev/tag/new/application/models/Entities/Evento.php",
+		"/home/taiar/dev/tag/new/application/models/Entities/Entity.php",
+		"/home/taiar/dev/tag/new/cli-config.php",
+		"/home/taiar/dev/tag/new/bootstrap.php",
+		"/home/taiar/dev/tag/new/application/config/config.php",
+		"/home/taiar/dev/tag/new/application/config/autoload.php",
+		"/home/taiar/dev/tag/new/application/libraries/Doctrine.php",
+		"/home/taiar/dev/tag/new/composer.json",
+		"/home/taiar/dev/wm2a/Procfile",
+		"/home/taiar/dev/wm2a/Gemfile",
+		"/home/taiar/dev/wm2a/config/application.rb",
+		"/home/taiar/dev/wm2a/config/database.yml",
+		"/home/taiar/dev/wm2a/app/views/connections/youtube_search.html.erb",
+		"/home/taiar/dev/wm2a/config/routes.rb",
+		"/home/taiar/dev/wm2a/app/assets/javascripts/connections.coffee",
+		"/home/taiar/dev/wm2a/app/views/connections/index.html.erb",
+		"/home/taiar/dev/wm2a/app/views/connections/youtube.html.erb",
+		"/home/taiar/dev/wm2a/app/assets/javascripts/application.js",
+		"/home/taiar/rb/person.rb",
+		"/home/taiar/Área de Trabalho/loginssh.txt",
+		"/home/taiar/dev/meliuz/serv.py",
+		"/home/taiar/dev/enum/src/AbstractEnum.php",
+		"/home/taiar/dev/enum/tests/AbstractEnumTest.php",
+		"/home/taiar/dev/enum/tests/TestEnum.php",
+		"/home/taiar/dev/enum/composer.json",
+		"/home/taiar/dev/tag/programas/assets/js/taghouse.js",
+		"/home/taiar/dev/tag/programas/application/migrations/082_skol_verao_refazendo_tabela.php",
+		"/home/taiar/dev/tag/programas/application/views/ambev_agendamentos/relatorio_skol_verao.php",
+		"/home/taiar/dev/tag/programas/application/controllers/ambev_agendamentos/ambev_agendamentos.php",
+		"/home/taiar/dev/tag/programas/application/models/agendamento_skol_verao.php",
+		"/tmp/fz3temp-1/newsletter.txt",
+		"/home/taiar/dev/crossladies/views/index.twig",
+		"/home/taiar/dev/crossladies/public/index.html",
+		"/home/taiar/dev/crossladies/controllers/AcoesController.php",
+		"/home/taiar/dev/crossladies/dados/newsletter.txt",
+		"/home/taiar/dev/crossladies/public/index.php",
+		"/tmp/fz3temp-1/form-to-email.php",
+		"/tmp/fz3temp-1/index.php",
+		"/home/taiar/programas/powerline-shell/config.py",
+		"/tmp/fz3temp-1/index.html",
+		"/home/taiar/dev/brasilkirin/piloto/application/hooks/layout/Layout.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/views/home/index.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/views/layouts/home.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/views/layouts/menu.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/views/log/esqueci.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/views/log/in.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/views/layouts/auth.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/config/database.php",
+		"/home/taiar/dev/brasilkirin/piloto/application/config/config.php",
+		"/home/taiar/dev/tag/programas/application/views/ambev_agendamentos/agendamento_skol_verao.php",
+		"/home/taiar/dev/tag/programas/application/libraries/Skol_verao.php",
+		"/home/taiar/dev/tag/programas/application/controllers/ambev_evento_pos/ambev_evento_pos.php",
+		"/home/taiar/dev/tag/programas/application/models/operacao.php",
+		"/home/taiar/dev/tag/programas/application/views/ambev_calendario/evento_marcacao.php",
+		"/home/taiar/dev/tag/programas/application/controllers/ambev_agendamentos/menu.json",
+		"/home/taiar/dev/tag/programas/application/views/ambev_evento_pos/listagem_agendamentos_pendentes.php",
+		"/home/taiar/dev/tag/programas/application/helpers/agendamento_helper.php",
+		"/home/taiar/dev/tag/programas/application/migrations/081_skol_verao.php",
+		"/home/taiar/dev/tag/programas/application/libraries/Regras_agendamentos.php",
+		"/home/taiar/dev/tag/programas/application/views/ambev_agendamentos/agendamento_las_vegas.php",
+		"/home/taiar/dev/tag/programas/application/config/migration.php",
+		"/home/taiar/dev/tag/programas/application/config/config.php",
+		"/home/taiar/dev/tag/programas/application/controllers/ajax.php",
+		"/home/taiar/dev/taiar.github.com/_includes/_rust_2_quotes.md.ref",
+		"/home/taiar/dev/taiar.github.com/_includes/_dart_2_quotes.md.ref",
+		"/home/taiar/dev/taiar.github.com/_drafts/2015-12-05-elixir-programming-language-usage.md",
+		"/home/taiar/dev/taiar.github.com/_drafts/2015-11-02-dart-programming-language-usage.md",
+		"/home/taiar/dev/taiar.github.com/_includes/_dart_1_quotes.md.ref",
+		"/home/taiar/dev/taiar.github.com/_drafts/2015-12-13-rust-programming-language-usage.md",
+		"/home/taiar/dev/taiar.github.com/_includes/_programming_languages_all_posts.md",
+		"/home/taiar/dev/taiar.github.com/_drafts/2015-12-06-rust-programming-language.md",
+		"/home/taiar/dev/taiar.github.com/_includes/_rust_1_quotes.md.ref",
+		"/home/taiar/dev/taiar.github.com/_includes/_elixir_1_quotes.md.ref"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 157.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			");",
+			">",
+			"struct",
+			"pid2",
+			"pid1",
+			"pipefd",
+			"task",
+			"]",
+			");",
+			"execvp",
+			"->->",
+			"argv1",
+			"right",
+			"ecmd",
+			"fork",
+			"right",
+			"rcmd",
+			"output",
+			"redircmd",
+			"parseexec",
+			"279",
+			"toks",
+			"```.",
+			" treelike structure, simple",
+			"```.",
+			"Ignore modified files",
+			"runcmd",
+			"parsecmd",
+			"parseexec",
+			"fork1",
+			"type",
+			"stdin",
+			"parsecmd",
+			"/",
+			"~>'",
+			"Checkin.",
+			"status_tarefa",
+			"resource",
+			"eeping",
+			"annotation",
+			"dropdown_horas",
+			"loader",
+			"librar",
+			"libraries",
+			"autoload",
+			"use ",
+			"sqlite",
+			"scrript",
+			"ipt>\n	\n</sc",
+			"access_token",
+			"    ",
+			"isset",
+			"di",
+			"    if(isset($filtro['data_inicial'])) {\n      $di = date_create_from_format(\"d/m/Y\", $filtro['data_inicial']);\n      $this->db->where('ag.data >=', $di->format(\"Y-m-d\"));\n    }",
+			"periodo",
+			"post",
+			"span4",
+			">\n",
+			"picker",
+			"datepicker",
+			"data_inicial",
+			"novidades",
+			"ambev",
+			"agendamento",
+			"pdv_codigo_",
+			"codigo",
+			"private",
+			"false",
+			"habilitados",
+			"vans_agendamento",
+			"<?php echo set_value",
+			"value",
+			"th_obrig\">",
+			"span12",
+			"observacoes",
+			",\n",
+			",",
+			" || !",
+			"maxEventos",
+			"periodo_validation",
+			"$res[0]",
+			"codigopdv",
+			"(codigopdv",
+			"codigopdv",
+			"codigopdv1",
+			"\n",
+			"$this->input->post('')",
+			"),",
+			" => array(",
+			"' => array(",
+			"ambev_eventos_marcacao",
+			"agendamento_las_vegas",
+			"_4",
+			"_3",
+			"_2",
+			"_1",
+			"observacoes",
+			"endereco",
+			"telefone",
+			"Telefone",
+			"telefone",
+			"numero",
+			"span3",
+			"h2",
+			"h3",
+			"https://www.dartlang.org/articles/futures-and-error-handling/",
+			"16",
+			"1",
+			"http://siciarz.net/24-days-of-rust-calling-rust-from-other-languages/",
+			"3",
+			"https://doc.rust-lang.org/book/rust-inside-other-languages.html",
+			"2",
+			"raw::c_float",
+			"raw::c_int",
+			"**",
+			"13",
+			"AAAAAAAA",
+			"WWWWW",
+			"AAAAAAAA",
+			"WWWWW",
+			"AAAAAAAA",
+			"WWWWW",
+			"AAAAAAAA",
+			"WWWWW",
+			"AAAAAAAA",
+			"WWWWW",
+			"[",
+			"AAAAAAAA"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"  ",
+			"<sup><a name=\"$1_b\" href=\"#$1\">$1</a></sup>"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "dccthread.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1470,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								640,
+								640
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "dccthread.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 456,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								63,
+								63
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 117,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								117,
+								117
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 24.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.dart.analyzer":
+	{
+		"height": 106.0
+	},
+	"output.exec":
+	{
+		"height": 106.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 106.0
+	},
+	"pinned_build_system": "",
+	"project": "tp1.b.sublime-project",
+	"replace":
+	{
+		"height": 44.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"tes",
+				"teste.sh"
+			],
+			[
+				"sim",
+				"simple_test.sh"
+			],
+			[
+				"make",
+				"Makefile"
+			],
+			[
+				"teste",
+				"teste.sh"
+			],
+			[
+				"gitsnipp",
+				"_posts/2014-07-07-git-snippets.md"
+			],
+			[
+				"user_config",
+				"app/models/user_config.rb"
+			],
+			[
+				"checkin.rb",
+				"app/models/checkin.rb"
+			],
+			[
+				"routes",
+				"config/routes.rb"
+			],
+			[
+				"database",
+				"config/database.yml"
+			],
+			[
+				"_form",
+				"app/views/checkins/_form.html.erb"
+			],
+			[
+				"gemfile",
+				"Gemfile"
+			],
+			[
+				"bootstrap",
+				"bootstrap.php"
+			],
+			[
+				"form_helper",
+				"system/helpers/form_helper.php"
+			],
+			[
+				"y_contr",
+				"application/core/MY_Controller.php"
+			],
+			[
+				"controller",
+				"system/core/Controller.php"
+			],
+			[
+				"array_",
+				"system/helpers/array_helper.php"
+			],
+			[
+				"autoload",
+				"application/config/autoload.php"
+			],
+			[
+				"confidata",
+				"application/config/database.php"
+			],
+			[
+				"entidade",
+				"module/Nucleo/src/Nucleo/Entity/Entidade.php"
+			],
+			[
+				"config.php",
+				"application/config/config.php"
+			],
+			[
+				"composer",
+				"composer.json"
+			],
+			[
+				"prof",
+				"Procfile"
+			],
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"appli",
+				"config/application.rb"
+			],
+			[
+				"you",
+				"app/views/connections/youtube.html.erb"
+			],
+			[
+				"youtube",
+				"app/views/connections/youtube.html.erb"
+			],
+			[
+				"index.",
+				"app/views/connections/index.html.erb"
+			],
+			[
+				"082",
+				"application/migrations/082_skol_verao_refazendo_tabela.php"
+			],
+			[
+				"agendamento_skol_verao",
+				"application/models/agendamento_skol_verao.php"
+			],
+			[
+				"ambev_agendamentos",
+				"application/controllers/ambev_agendamentos/ambev_agendamentos.php"
+			],
+			[
+				"taghouse.js",
+				"assets/js/taghouse.js"
+			],
+			[
+				"relatorio_skol_verao",
+				"application/views/ambev_agendamentos/relatorio_skol_verao.php"
+			],
+			[
+				"config",
+				"application/config/config.php"
+			],
+			[
+				"configdata",
+				"application/config/database.php"
+			],
+			[
+				"evento",
+				"application/views/ambev_calendario/evento_marcacao.php"
+			],
+			[
+				"operaca",
+				"application/models/operacao.php"
+			],
+			[
+				"ambev_pos",
+				"application/controllers/ambev_evento_pos/ambev_evento_pos.php"
+			],
+			[
+				"ambev_evento",
+				"application/controllers/ambev_evento_pos/ambev_evento_pos.php"
+			],
+			[
+				"listagem_agendamentos_pendentes",
+				"application/views/ambev_evento_pos/listagem_agendamentos_pendentes.php"
+			],
+			[
+				"opera",
+				"application/models/operacao.php"
+			],
+			[
+				"agendamento_",
+				"application/helpers/agendamento_helper.php"
+			],
+			[
+				"regras",
+				"application/libraries/Regras_agendamentos.php"
+			],
+			[
+				"agendamento_hel",
+				"application/helpers/agendamento_helper.php"
+			],
+			[
+				"las_vegas",
+				"application/views/ambev_agendamentos/agendamento_las_vegas.php"
+			],
+			[
+				"configmigra",
+				"application/config/migration.php"
+			],
+			[
+				"operacao.php",
+				"application/models/operacao.php"
+			],
+			[
+				"ajax",
+				"application/controllers/ajax.php"
+			],
+			[
+				"postrustusa",
+				"_posts/2015-12-13-rust-programming-language-usage.md"
+			],
+			[
+				"rust",
+				"_posts/2015-12-06-rust-programming-language.md"
+			],
+			[
+				"elixirusage",
+				"_drafts/2015-12-05-elixir-programming-language-usage.md"
+			],
+			[
+				"dart_1",
+				"_includes/_dart_1_quotes.md.ref"
+			],
+			[
+				"rustref",
+				"_includes/_rust_1_refs.md"
+			],
+			[
+				"elixir",
+				"_drafts/2015-11-09-elixir-programming-language.md"
+			],
+			[
+				"elixirqu",
+				"_includes/_elixir_1_quotes.md.ref"
+			],
+			[
+				"elixi",
+				"_includes/_elixir_1_refs.md"
+			],
+			[
+				".bib",
+				"bibliog.bib"
+			],
+			[
+				"tex",
+				"monografia_api-andre_taiar-saas_didatico.tex"
+			],
+			[
+				"ceylon2qu",
+				"_includes/_ceylon_2_quotes.md.ref"
+			],
+			[
+				"ceylonusage",
+				"_drafts/2015-10-23-ceylon-programming-language-usage.md"
+			],
+			[
+				"ceylon",
+				"_includes/_ceylon_quotes.md.ref"
+			],
+			[
+				"_ceylon_",
+				"_includes/_ceylon_quotes.md.ref"
+			],
+			[
+				"dart",
+				"_posts/2015-10-26-dart-programming-language.md"
+			],
+			[
+				"m_misc.c",
+				"m_misc.c"
+			],
+			[
+				"s_sound.c",
+				"s_sound.c"
+			],
+			[
+				"d_main.c",
+				"d_main.c"
+			],
+			[
+				"i_video.c",
+				"i_video.c"
+			],
+			[
+				"i_sound.c",
+				"i_sound.c"
+			],
+			[
+				"ivideo",
+				"i_video.c"
+			],
+			[
+				"i_video",
+				"i_video.h"
+			],
+			[
+				"modelopera",
+				"application/models/operacao.php"
+			],
+			[
+				"setup.php",
+				"application/controllers/setup.php"
+			],
+			[
+				"plugin-ins",
+				"wp-admin/plugin-install.php"
+			],
+			[
+				"wp-co",
+				"wp-config.php"
+			],
+			[
+				"layout",
+				"application/hooks/layout/Layout.php"
+			],
+			[
+				"core/codeigniter.php",
+				"system/core/CodeIgniter.php"
+			],
+			[
+				"boot",
+				"tests/Bootstrap.php"
+			],
+			[
+				"my_u",
+				"application/core/MY_Utf8.php"
+			],
+			[
+				"hooks",
+				"application/config/hooks.php"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 210.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
