@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!-- saved from url=(0064)http://pubs.opengroup.org/onlinepubs/7908799/xsh/ucontext.h.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<!-- Copyright 1997 The Open Group, All Rights Reserved -->
+<title>&lt;ucontext.h&gt;</title>
+<style type="text/css"></style><style id="style-1-cropbar-clipper">/* Copyright 2014 Evernote Corporation. All rights reserved. */
+.en-markup-crop-options {
+    top: 18px !important;
+    left: 50% !important;
+    margin-left: -100px !important;
+    width: 200px !important;
+    border: 2px rgba(255,255,255,.38) solid !important;
+    border-radius: 4px !important;
+}
+
+.en-markup-crop-options div div:first-of-type {
+    margin-left: 0px !important;
+}
+</style></head><body bgcolor="white">
+<center>
+<font size="2">
+The Single UNIX ® Specification, Version 2<br>
+Copyright © 1997 The Open Group
+
+</font></center><hr size="2" noshade="">
+<h4><a name="tag_000_010_217">&nbsp;</a>NAME</h4><blockquote>
+ucontext - user context
+</blockquote><h4><a name="tag_000_010_218">&nbsp;</a>SYNOPSIS</h4><blockquote>
+<pre><code>
+
+#include &lt;ucontext.h&gt;
+</code>
+</pre>
+</blockquote><h4><a name="tag_000_010_219">&nbsp;</a>DESCRIPTION</h4><blockquote>
+The
+<i>&lt;ucontext.h&gt;</i>
+header defines the
+<b>mcontext_t</b>
+type through
+<b>typedef</b>.
+<p>
+The
+<i>&lt;ucontext.h&gt;</i>
+header defines the
+<b>ucontext_t</b>
+type as a structure that includes at least the following members:
+</p><pre><code>
+ucontext_t *uc_link     pointer to the context that will be resumed
+                        when this context returns
+sigset_t    uc_sigmask  the set of signals that are blocked when this
+                        context is active
+stack_t     uc_stack    the stack used by this context
+mcontext_t  uc_mcontext a machine-specific representation of the saved
+                        context
+</code>
+</pre>
+<p>
+The types
+<b>sigset_t</b>
+and
+<b>stack_t</b>
+are defined as in
+<i><a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/signal.h.html">&lt;signal.h&gt;</a></i>.
+</p><p>
+The following are declared as functions and may also be defined as macros,
+Function prototypes must be provided for use with an ISO C
+compiler.
+</p><pre><code>
+int  <a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/getcontext.html">getcontext</a>(ucontext_t *);
+int  <a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/setcontext.html">setcontext</a>(const ucontext_t *);
+void <a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/makecontext.html">makecontext</a>(ucontext_t *, (void *)(), int, ...);
+int  <a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/swapcontext.html">swapcontext</a>(ucontext_t *, const ucontext_t *);
+</code>
+</pre>
+</blockquote><h4><a name="tag_000_010_220">&nbsp;</a>APPLICATION USAGE</h4><blockquote>
+None.
+</blockquote><h4><a name="tag_000_010_221">&nbsp;</a>FUTURE DIRECTIONS</h4><blockquote>
+None.
+</blockquote><h4><a name="tag_000_010_222">&nbsp;</a>SEE ALSO</h4><blockquote>
+<i><a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/getcontext.html">getcontext()</a></i>,
+<i><a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/makecontext.html">makecontext()</a></i>,
+<i><a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/sigaction.html">sigaction()</a></i>,
+<i><a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/sigprocmask.html">sigprocmask()</a></i>,
+<i><a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/sigaltstack.html">sigaltstack()</a></i>,
+<i><a href="http://pubs.opengroup.org/onlinepubs/7908799/xsh/signal.h.html">&lt;signal.h&gt;</a></i>.
+</blockquote><hr size="2" noshade="">
+<center><font size="2">
+UNIX ® is a registered Trademark of The Open Group.<br>
+Copyright © 1997 The Open Group
+<br> [ <a href="http://pubs.opengroup.org/onlinepubs/7908799/index.html">Main Index</a> | <a href="http://pubs.opengroup.org/onlinepubs/7908799/xshix.html">XSH</a> | <a href="http://pubs.opengroup.org/onlinepubs/7908799/xcuix.html">XCU</a> | <a href="http://pubs.opengroup.org/onlinepubs/7908799/xbdix.html">XBD</a> | <a href="http://pubs.opengroup.org/onlinepubs/7908799/cursesix.html">XCURSES</a> | <a href="http://pubs.opengroup.org/onlinepubs/7908799/xnsix.html">XNS</a> ]
+
+</font></center><hr size="2" noshade="">
+
+</body></html>

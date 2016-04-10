@@ -2,9 +2,18 @@
 #include <stdlib.h>
 #include "dccthread.h"
 
-void dccthread_init(void (*func)(int), int param) __attribute__((noreturn));
+typedef enum {
+    DCCTHREAD_NEW,
+    DCCTHREAD_RUN,
+    DCCTHREAD_END
+} dccthread_state_t;
 
-dccthread_t * dccthread_create(const char *name, void (*func)(int ), int param);
+
+void dccthread_init(void (*func)(int), int param) {
+  func(param);
+}
+
+dccthread_t * dccthread_create(const char *name, void (*func)(int), int param);
 
 void dccthread_yield(void);
 

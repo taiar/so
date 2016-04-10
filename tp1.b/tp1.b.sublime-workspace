@@ -49,33 +49,6 @@
 			]
 		]
 	},
-	"buffers":
-	[
-		{
-			"file": "dccthread.h",
-			"settings":
-			{
-				"buffer_size": 1470,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "dccthread.c",
-			"settings":
-			{
-				"buffer_size": 456,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "main.c",
-			"settings":
-			{
-				"buffer_size": 117,
-				"line_ending": "Unix"
-			}
-		}
-	],
 	"build_system": "",
 	"build_system_choices":
 	[
@@ -83,10 +56,14 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 148.0,
-		"last_filter": "install",
+		"height": 194.0,
+		"last_filter": "vmen",
 		"selected_items":
 		[
+			[
+				"vmen",
+				"View: Toggle Menu"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
@@ -180,7 +157,7 @@
 				"Set Syntax: PHP"
 			]
 		],
-		"width": 453.0
+		"width": 534.0
 	},
 	"console":
 	{
@@ -199,14 +176,20 @@
 		"side_bar_visible": false,
 		"status_bar_visible": false
 	},
-	"expanded_folders":
-	[
-		"/home/taiar/dev/ufmg/so/tp1.b"
-	],
 	"file_history":
 	[
-		"/home/taiar/dev/ufmg/so/tp1.a/sh.c",
+		"/home/taiar/dev/ufmg/so/tp1.b/dccthread.c",
 		"/home/taiar/dev/ufmg/so/tp1.b/dccthread.h",
+		"/home/taiar/dev/ufmg/so/tp1.b/teste1.c",
+		"/home/taiar/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/taiar/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/taiar/dev/ufmg/so/tp1.b/Makefile",
+		"/home/taiar/dev/ufmg/so/tp1.b/.gitignore",
+		"/home/taiar/dev/ufmg/so/tp1.b/tp1.b.sublime-project",
+		"/home/taiar/dev/ufmg/so/tp1.b/spec.pdf",
+		"/home/taiar/dev/ufmg/so/tp1.b/report.txt",
+		"/home/taiar/dev/ufmg/so/tp1.b/main.c",
+		"/home/taiar/dev/ufmg/so/tp1.a/sh.c",
 		"/home/taiar/dev/ufmg/so/tp1.a/report.txt",
 		"/home/taiar/dev/ufmg/so/tp1.a/teste.sh",
 		"/home/taiar/dev/ufmg/so/tp1.a/simple_test.sh",
@@ -246,7 +229,6 @@
 		"/home/taiar/dev/ah/app/helpers/home_helper.rb",
 		"/home/taiar/dev/ah/app/views/checkins/show.json.jbuilder",
 		"/home/taiar/dev/ah/app/controllers/home_controller.rb",
-		"/home/taiar/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
 		"/home/taiar/dev/appprova/appprova/config/database.yml",
 		"/home/taiar/dev/appprova/appprova/Gemfile",
 		"/home/taiar/dev/wm2a/app/controllers/connections_controller.rb",
@@ -323,16 +305,7 @@
 		"/home/taiar/dev/tag/programas/application/config/migration.php",
 		"/home/taiar/dev/tag/programas/application/config/config.php",
 		"/home/taiar/dev/tag/programas/application/controllers/ajax.php",
-		"/home/taiar/dev/taiar.github.com/_includes/_rust_2_quotes.md.ref",
-		"/home/taiar/dev/taiar.github.com/_includes/_dart_2_quotes.md.ref",
-		"/home/taiar/dev/taiar.github.com/_drafts/2015-12-05-elixir-programming-language-usage.md",
-		"/home/taiar/dev/taiar.github.com/_drafts/2015-11-02-dart-programming-language-usage.md",
-		"/home/taiar/dev/taiar.github.com/_includes/_dart_1_quotes.md.ref",
-		"/home/taiar/dev/taiar.github.com/_drafts/2015-12-13-rust-programming-language-usage.md",
-		"/home/taiar/dev/taiar.github.com/_includes/_programming_languages_all_posts.md",
-		"/home/taiar/dev/taiar.github.com/_drafts/2015-12-06-rust-programming-language.md",
-		"/home/taiar/dev/taiar.github.com/_includes/_rust_1_quotes.md.ref",
-		"/home/taiar/dev/taiar.github.com/_includes/_elixir_1_quotes.md.ref"
+		"/home/taiar/dev/taiar.github.com/_includes/_rust_2_quotes.md.ref"
 	],
 	"find":
 	{
@@ -351,6 +324,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"dccthread_init",
 			");",
 			">",
 			"struct",
@@ -477,8 +451,7 @@
 			"WWWWW",
 			"AAAAAAAA",
 			"WWWWW",
-			"[",
-			"AAAAAAAA"
+			"["
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -495,99 +468,6 @@
 		"whole_word": false,
 		"wrap": true
 	},
-	"groups":
-	[
-		{
-			"selected": 2,
-			"sheets":
-			[
-				{
-					"buffer": 0,
-					"file": "dccthread.h",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1470,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								640,
-								640
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "dccthread.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 456,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								63,
-								63
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "main.c",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 117,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								117,
-								117
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		}
-	],
 	"incremental_find":
 	{
 		"height": 24.0
@@ -605,11 +485,18 @@
 				0,
 				1,
 				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
 			]
 		],
 		"cols":
 		[
 			0.0,
+			0.5,
 			1.0
 		],
 		"rows":
@@ -636,7 +523,6 @@
 		"height": 106.0
 	},
 	"pinned_build_system": "",
-	"project": "tp1.b.sublime-project",
 	"replace":
 	{
 		"height": 44.0
@@ -981,14 +867,13 @@
 		],
 		"width": 0.0
 	},
-	"selected_group": 0,
 	"settings":
 	{
 	},
 	"show_minimap": true,
 	"show_open_files": false,
 	"show_tabs": true,
-	"side_bar_visible": true,
+	"side_bar_visible": false,
 	"side_bar_width": 210.0,
 	"status_bar_visible": true,
 	"template_settings":
