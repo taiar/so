@@ -1,6 +1,9 @@
 main: thread
 	gcc main.c -o thread
 
+clean:
+	rm -rf *.o thread
+
 thread:
 	gcc -c dccthread.c
 
