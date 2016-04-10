@@ -6,3 +6,7 @@ thread:
 
 run: main
 	./thread
+
+teste1: main
+	gcc teste1.c -o thread
+	run
