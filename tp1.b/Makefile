@@ -10,6 +10,6 @@ thread:
 run: main
 	./thread
 
-teste1: main
-	gcc teste1.c -o thread
-	run
+teste1: thread
+	gcc teste1.c dccthread.o -o thread
+	./thread
