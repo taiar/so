@@ -1,0 +1,74 @@
+# Descrição da parte 1
+
+func recebe um unico parametro do tipo inteiro e é do tipo void.
+Com essa função definida, podemos invocar o dcc_thread_init.
+Definiu por exemplo uma função main2 e passou o parâmetro 0 (zero).
+Dessa forma, dentro do dcc_thread_init ele vai invocar main2(0). E aí o main2 
+vai ser chamado com esse parâmetro 0 e vai ser a primeirésima thread do 
+processo. Então, o dcc_thread_init ele passa qual é a primeira thread que ele 
+vai executar.
+
+Master chama exec -> exec chama uma função determinada para iniciar a primeira
+thread do processo que é a função main. Aqui é mais ou menos a mesma coisa: a 
+função main chamará o dcc_thread_init que vai incializar tudo o que 
+necessitarmos na nossa fila de threads, malloc, zerar tudo e, ao final, 
+chamará func(params), tipo um exec, e aí o processo continua executando dentro
+desse func.
+
+dcc_thread_init quem implementa somos nós. Quando chamaos o dcc_thread_init já
+vamos ter que criar 2 threads. Uma delas é a thread principal (a primeirésima
+thread do processo que vai executar a função func) e vamos criar também a thread
+gerente. A thread gerente é tipo o sistema operacional. Ela vai dividir a CPU 
+entre as threads do processo. Portanto, assim que uma pessoa chamar 
+dcc_thread_init vamos: criar a thread inicial, criar a thread gerente, e aí a 
+thread gerente vai ficar trocando entre as threads do processo. Como nesse 
+primeiro momento só temos a thread inicial para executar, a fila vai ficar 
+executando somente a thread principal, sempre.
+
+Atualmente temos duas threads: a principal executando a func e a de gerência que
+está executando alguma função de genrência de threads que nós criamos.
+
+Agora o nosso processo vai ter que rodar muitas threads: func e 
+dcc_thread_manage, por exemplo. Como trocar o contexto entre func e gerenciador?
+Nesse ponto tem que ter um mecanismo pra trocar de threads. É parecido com 
+exceção de Java e goto. Exceção é um goto "roubado" que muda de função dentro de
+um programa. O que vamos usar nesse ponto é como se fosse o esquema da exceção.
+Ele muda a função que está executando. Como funciona? Estamos executando a 
+função func, porém, agora queremos executar a thread gerente. Vamos fazer igual 
+ao sistema operacional. Vamos salvar o estado da thread func e aí vamos 
+restaurar o estado da thread gerente e começar a executar a thread gerente. 
+Quando quizermos trocar novamente, fazemos a mesma operação, salvando o contexto
+da thread gerente e restaurando a thread que executa func.
+
+Essas funções já existem na biblioteca (de troca de contexto etc). Existe uma 
+estrutura de dados chamada u_context_t (ou algo assim). É ela que vamos utilizar
+para implementar as trocas de contexto da biblioteca. Para cada thread que nossa
+biblioteca criar, vamos ter que criar um u_context_t (que é algo que trabalha 
+com o estado da thread). Para criar um novo ucontext_t usamos make_context e 
+assim vamos criar um contexto novo. Quando invocamos essa função, ela cria uma 
+thread idêntica à thread atual (tipo o fork). E aí temos todas as funções 
+save_context, get_context etc e tem uma função que já faz o serviço completo que
+é a swap_context. Então sempre que quizermos trocar entre threads, vamos chamar 
+swap_context (recebe 2 contextos o que estamos e o que queremos executar). Essas 
+fuções fazem tudo o de complicado do trabalho e não vamos precisar de nos 
+preocupar em outra coisa que não seja chamar estas funções.
+
+Então a primeira parte do trabalho é criar uma estrutura para que consigamos
+executar e trocar o contexto entre as threads func e gerente.
+
+Com essa primeira parte em funcionamento, o que vamos ter que fazer em seguida é
+criar a função dcc_thread_create. Em princípio, dcc_thread_create e 
+dcc_thread_init são bastante parecidas, só que dcc_thread_create tem o nome da 
+thread. dcc_thread_init não tem nome de thread por que ela sempre cria a mesma 
+thread que é a principal (com nome pré-definido). Então dcc_thread_create vai 
+criar uma nova thread que executará a função que passarmos a ela como parâmetro.
+
+Nesta primeira parte do TP, faremos threads cooperativas. Quando uma thread entra
+na CPU, ela executa até cansar, até o fim, ou até executar a função 
+dcc_thread_yield. Para que uma thread saia, basta trocar o contexto para a 
+thread gerente (que então vai escolher quem seria a próxima thread a executar).
+Então após termos implementado dcc_thread_create, dcc_thread_init e 
+dcc_thread_yield implementados, vamos conseguir rodar o primeiro teste do 
+trabalho.
+
+Escutei até os 15 minutos.
