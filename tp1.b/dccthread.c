@@ -7,16 +7,12 @@
 
 #define DCCTHREAD_MAX_NAME_SIZE 256
 #define DCCTHREAD_STACK_SIZE 65536
-#define DCCTHREAD_MAX_THREADS 999
+#define DCCTHREAD_MAX_THREADS 150
 
 typedef struct dccthread {
   int id;
   char name[DCCTHREAD_MAX_NAME_SIZE];
   ucontext_t context;
-  int status;
-  int blocking;
-  struct dccthread *waiting;
-  struct dccthread *next;
 } dccthread_t;
 
 dccthread_t *current_t, *manager_t, *main_t;
@@ -29,50 +25,41 @@ void manager_function(void);
 
 dccthread_t * dccthread_new(void) {
   dccthread_t *new = malloc(sizeof(dccthread_t));
-  new->context.uc_stack.ss_sp = NULL;
-  new->context.uc_stack.ss_size = 0;
-  new->context.uc_link = NULL;
-  new->id = -1;
-  new->blocking = 0;
-  new->waiting = NULL;
   getcontext(&new->context);
+  set_context_config(new);
+  new->id = -1;
   
   return new;
 }
 
-void dccthread_init(void (*func)(int), int param) {
+void dccthread_init(void (*func)(void), int param) {
     manager_t = dccthread_new();
-    set_context_config(manager_t);
     strcpy(manager_t->name, "MANAGER_THREAD");
-    makecontext(&manager_t->context, manager_function, 1, 0);
-    manager_t->status = 0;
+    makecontext(&manager_t->context, manager_function, 0);
 
     main_t = dccthread_new();
-    set_context_config(main_t);
     strcpy(main_t->name, "MAIN_THREAD");
     makecontext(&main_t->context, func, 1, param);
-    main_t->status = 1;
     
     memset(threads, 0, sizeof(dccthread_t*) * DCCTHREAD_MAX_THREADS);
     current_t = main_t;
     thread_current_id = -1;
     
-    setcontext(&current_t->context);
+    setcontext(&main_t->context);
 }
 
-dccthread_t * dccthread_create(const char *name, void (*func)(int), int param) {
+dccthread_t * dccthread_create(const char *name, void (*func)(void), int param) {
     dccthread_t *new = dccthread_new();
-    set_context_config(new);
     strcpy(new->name, name);
     makecontext(&new->context, func, 1, param);
-    new->status = 0;
     new->id = thread_number;
     thread_number += 1;
     threads[new->id] = new;
+    return new;
 }
 
 void dccthread_yield(void) {
-  swapcontext(&(current_t)->context, &(manager_t)->context);
+  swapcontext(&current_t->context, &manager_t->context);
 }
 
 void dccthread_exit(void) {
@@ -98,14 +85,14 @@ const char * dccthread_name(dccthread_t *id) {
 /***************************************/
 
 void set_context_config(dccthread_t *thread) {
-  thread->context.uc_stack.ss_sp = malloc(DCCTHREAD_STACK_SIZE);
-  thread->context.uc_stack.ss_size = DCCTHREAD_STACK_SIZE;
+  thread->context.uc_link = 0;
+  thread->context.uc_stack.ss_sp = malloc(SIGSTKSZ);
+  thread->context.uc_stack.ss_size = SIGSTKSZ;
   thread->context.uc_stack.ss_flags = 0;
 }
 
 void manager_function() {
-  int next_thread_idx = (thread_current_id + 1) % thread_number;
-  thread_current_id = next_thread_idx;
+  thread_current_id = (thread_current_id + 1) % thread_number;
   current_t = threads[thread_current_id];
-  swapcontext(&(manager_t)->context, &(threads[thread_current_id])->context);
+  swapcontext(&manager_t->context, &current_t->context);
 }
