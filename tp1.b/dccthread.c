@@ -16,15 +16,16 @@ typedef struct dccthread {
 } dccthread_t;
 
 dccthread_t *current_t, *manager_t, *main_t;
-dccthread_t *threads[DCCTHREAD_MAX_THREADS];
+dccthread_t **threads;
 int thread_number = 0;
 int thread_current_id = 0;
 
 void set_context_config(dccthread_t*);
 void manager_function(void);
 
-dccthread_t * dccthread_new(void) {
+dccthread_t * dccthread_new(const char* name) {
   dccthread_t *new = malloc(sizeof(dccthread_t));
+  strcpy(new->name, name);
   getcontext(&new->context);
   set_context_config(new);
   new->id = -1;
@@ -33,15 +34,13 @@ dccthread_t * dccthread_new(void) {
 }
 
 void dccthread_init(void (*func)(void), int param) {
-    manager_t = dccthread_new();
-    strcpy(manager_t->name, "MANAGER_THREAD");
+    manager_t = dccthread_new("MANAGER_THREAD");
     makecontext(&manager_t->context, manager_function, 0);
 
-    main_t = dccthread_new();
-    strcpy(main_t->name, "MAIN_THREAD");
+    main_t = dccthread_new("MAIN_THREAD");
     makecontext(&main_t->context, func, 1, param);
-    
-    memset(threads, 0, sizeof(dccthread_t*) * DCCTHREAD_MAX_THREADS);
+
+    threads = malloc(sizeof(dccthread_t*) * DCCTHREAD_MAX_THREADS);
     current_t = main_t;
     thread_current_id = -1;
     
@@ -49,8 +48,7 @@ void dccthread_init(void (*func)(void), int param) {
 }
 
 dccthread_t * dccthread_create(const char *name, void (*func)(void), int param) {
-    dccthread_t *new = dccthread_new();
-    strcpy(new->name, name);
+    dccthread_t *new = dccthread_new(name);
     makecontext(&new->context, func, 1, param);
     new->id = thread_number;
     thread_number += 1;
