@@ -45,24 +45,18 @@ void dccthread_init(void (*func)(int), int param) {
     set_context_config(manager_t);
     strcpy(manager_t->name, "MANAGER_THREAD");
     makecontext(&manager_t->context, manager_function, 1, 0);
-    manager_t->id = thread_current_id;
     manager_t->status = 0;
 
     main_t = dccthread_new();
     set_context_config(main_t);
     strcpy(main_t->name, "MAIN_THREAD");
     makecontext(&main_t->context, func, 1, param);
-    thread_current_id += 1;
-    main_t->id = thread_current_id;
     main_t->status = 1;
     
-    thread_number = 2;
     memset(threads, 0, sizeof(dccthread_t*) * DCCTHREAD_MAX_THREADS);
-    threads[0] = manager_t;
-    threads[1] = main_t;
     current_t = main_t;
-    thread_current_id = 1;
-
+    thread_current_id = -1;
+    
     setcontext(&current_t->context);
 }
 
@@ -78,8 +72,7 @@ dccthread_t * dccthread_create(const char *name, void (*func)(int), int param) {
 }
 
 void dccthread_yield(void) {
-  printf("YELDIN\n");
-  swapcontext(&(current_t->context), &(manager_t->context));
+  swapcontext(&(current_t)->context, &(manager_t)->context);
 }
 
 void dccthread_exit(void) {
@@ -110,18 +103,9 @@ void set_context_config(dccthread_t *thread) {
   thread->context.uc_stack.ss_flags = 0;
 }
 
-void manager_function() { 
-  printf("MANAGIN\n");
-  int next_thread_idx;
-  if(thread_current_id <= 1) {
-    next_thread_idx = 2;
-  } else {
-    if((thread_current_id + 1) == thread_number)
-      next_thread_idx = 2;
-    else 
-      next_thread_idx = thread_current_id + 1;
-  }
+void manager_function() {
+  int next_thread_idx = (thread_current_id + 1) % thread_number;
   thread_current_id = next_thread_idx;
-  current_t = threads[next_thread_idx];
-  swapcontext(&(manager_t->context), &(threads[next_thread_idx]->context));
+  current_t = threads[thread_current_id];
+  swapcontext(&(manager_t)->context, &(threads[thread_current_id])->context);
 }
