@@ -1,0 +1,124 @@
+BIBLIOTECA DE THREADS - RELATÓRIO
+
+1. Termo de compromisso
+
+Os membros do grupo afirmam que todo o código desenvolvido para este
+trabalho é de autoria própria. Exceto pelo material listado no item 3
+deste relatório, os membros do grupo afirmam não ter copiado
+material da Internet nem obtiveram código de terceiros.
+
+2. Membros do grupo e alocação de esforço
+
+Preencha as linhas abaixo com o nome e o e-mail dos integrantes do
+grupo. Substitua XX pela contribuição de cada membro do grupo no
+desenvolvimento do trabalho.
+
+Amanda Crisitna Castro dos Santos <amandaaccsantos@gmail.com> 50%
+Pedro Thomas Pereira Antunes <pedro.thomas94@gmail.com> 50%
+
+3. Referências bibliográficas
+
+http: //man7.org/linux/man-pages/man2/timer_create.2.html
+http://man7.org/linux/man-pages/man2/sigprocmask.2.html
+http://man7.org/linux/man-pages/man3/makecontext.3.html
+
+4. Estruturas de dados
+
+Descreva e justifique as estruturas de dados e algoritmos utilizados
+em sua solução.
+
+- struct dccthread:
+Estrutura que serve para guardar os dados de uma thread, facilitando
+quando uma nova é criada.
+
+- struct dccthread * threadGerente:
+Estrutura global que representa a thread gerente. Ela é inicializada
+quando a função dccthread_init é chamada.
+
+- struct dccthread * threadCorrente:
+Estrutura global que representa a thread que está executando no momento.
+Ela é usada pelo gerenciador de threads, sendo usada nas trocas de contexto.
+
+- struct dccthread * threads[MAX_NUM_THREADS]:
+Estrutura que armazena todas as threads, cada uma indicada por um índice.
+
+- timer_t timerid:
+Identificador do timer usado para tornas a biblioteca de threads preempitiva.
+
+- timer_t* timerid_sleep:
+Identificador do timer usado para adicionar suporte à espera.
+
+- struct timespec ultima_thread_executada:
+Estrutura que guarda a quantidade de tempo gasto pela ultima thread que foi 
+executada.
+
+- void inicializa_pilha(ucontext_t * context):
+Aloca a pilha para o contexto do programa.
+
+- void cria_thread(int id, const char* name, struct dccthread **thread):
+Cria a estrutura de uma thread, quando o dccthread_init é chamado.
+
+- void gerencia_threads():
+Função gerenciadora das threads. Ela escolhe qual será a proxima thread a 
+executar.
+
+- int thread_pronta(struct dccthread *thread):
+Analisa se uma thread está pronta pra executar.
+
+- void remove_thread(int id):
+Função que remove uma thread, quando o dccthread_exit é chamado.
+
+- void destroi_thread(struct dccthread *thread):
+Libera a parte da pilha usada no contexto do programa.
+
+- void bloqueia_interrupcoes():
+Bloqueia interrupções que podem ser geradas pelo sistema em certa parte do 
+código.
+
+- void desbloqueia_interrupcoes():
+Desbloqueia interrupções.
+
+- void inicializa_timer():
+Inicializa o temporizador, que será chamado regularmente, para trocar a 
+thread que esta executando.
+
+- timer_t create_timer(struct sigevent sig_event, int signo, clockid_t CLK_id):
+Cria o temporizador.
+
+- void install_sighandler(struct sigaction sig_action, int signo, 
+		void (*handler)(int)):
+Estabelece manipulação para o temporizador dos sinais.
+
+- void set_timer(struct itimerspec timervals, timer_t timerid, int sec, 
+		int nsec, char periodically):
+Dispara o temporizador.
+
+- void inicializa_soneca():
+Inicializa o temporizador, que será usado quando dccthread_sleep for chamada.
+
+- void gerencia_soneca(void):
+Função gerenciadora da soneca. Ela escolhe qual será a proxima thread a 
+executar.
+
+- void atualiza_timer():
+Atualiza o temporizador. É usada para controlar o timer quando 
+dccthread_sleep é chamada.
+
+5. Testes extras
+
+- teste5.c:
+Conta de 1 até 5 usando o dccthread_sleep dormindo por 1 segundo de acordo 
+com o CLOCK_REALTIME.
+
+- mandelbrot.c:
+Renderiza usando a biblioteca lodepng (inclusa) o fractal do conjunto de 
+mandelbrot. Para alterar a resolução e o número de iterações é possível 
+através do ajuste dos defines SIZE e n_iter dentro do código fonte. 
+A saída é um arquivo chamado "mandelbrot_output.png".
+
+6. Execução do programa
+
+A execução deve ser feita através do utilitário make. Ela pode ser feita 
+chamando make para o caso mais geral, substituindo nome do teste por qual 
+deles deve ser utilizado, ou através do nome de cada um deles. A opção 
+make clean também pode ser utilizada.

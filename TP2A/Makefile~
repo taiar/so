@@ -1,0 +1,16 @@
+all:
+	gcc -g -std=gnu11 -Wall dccthread.c teste4.c -lrt -lm -o biblioteca_threads
+teste1:
+	gcc -Wall teste1.c dccthread.c -lrt -o teste1
+teste2:
+	gcc -Wall teste2.c dccthread.c -lrt -o teste2
+teste3:
+	gcc -Wall teste3.c dccthread.c -lrt -o teste3
+teste4:
+	gcc -Wall teste4.c dccthread.c -lrt -o teste4
+teste5:
+	gcc -Wall teste5.c dccthread.c -lrt -o teste5
+mandelbrot:
+	gcc -Wall mandelbrot.c dccthread.c lodepng.c -lrt -lm -o mandelbrot
+clean: 
+	rm -f biblioteca_threads teste1 teste2 teste3 teste4 teste5 mandelbrot mandelbrot_output.png
