@@ -21,6 +21,7 @@ struct sigevent t_event;
 struct sigaction t_action, o_action;
 struct itimerspec t_time;
 timer_t timer;
+timer_t* sleep_timer;
 
 void dccthread_yield(void);
 void context_init(ucontext_t*);
@@ -97,7 +98,18 @@ void dccthread_wait(dccthread_t *tid){
   printf("%s parou de esperar %s\n", current->name, tid->name);
 }
 
-void dccthread_sleep(struct timespec ts){}
+void dccthread_sleep(struct timespec ts) {
+  bloqueia_interrupcoes();
+  dccthread_self()->soneca = ts.tv_sec * 1000000000 + ts.tv_nsec;
+  dccthread_self()->status = DORMINDO;
+  if (timerid_sleep == NULL) {
+    inicializa_soneca();
+  }
+  clock_gettime(CLOCK_REALTIME, &ultima_thread_executada);
+
+  gerencia_soneca();
+  dccthread_yield();
+}
 
 dccthread_t * dccthread_self(void){
   return current;
