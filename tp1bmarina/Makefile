@@ -17,3 +17,12 @@ teste1: thread
 teste2: thread
 	gcc teste2.c dccthread.o -o thread -g -lm -Wall
 	./thread
+
+teste3: thread
+	gcc teste3.c dccthread.o -o thread -g -lm -Wall
+	./thread
+
+teste4: thread
+	gcc teste4.c dccthread.o -o thread -g -lm -Wall
+	./thread
+
