@@ -1,5 +1,5 @@
-#ifndef DCCTHREAD_H_
-#define DCCTHREAD_H_
+#ifndef __DCCTHREAD_HEADER__
+#define __DCCTHREAD_HEADER__
 
 typedef struct dccthread dccthread_t;
 
@@ -8,13 +8,14 @@ typedef struct dccthread dccthread_t;
 /* `dccthread_init` initializes any state necessary for the
  * threadling library and starts running `func`.  this function
  * never returns. */
-void dccthread_init(void (*func)(int), int param) __attribute__((noreturn));
+// void dccthread_init(void (*func)(int), int param) __attribute__((noreturn));
+void dccthread_init(void (*func)(int), int param);
 
 /* on success, `dccthread_create` allocates and returns a thread
  * handle.  returns `NULL` on failure.  the new thread will execute
  * function `func` with parameter `param`.  `name` will be used to
  * identify the new thread. */
-dccthread_t * dccthread_create(const char *name, void (*func)(int), int param);
+dccthread_t * dccthread_create(const char *name, void (*func)(int ), int param);
 
 /* `dccthread_yield` will yield the CPU (from the current thread to
  * another). */
@@ -40,5 +41,4 @@ dccthread_t * dccthread_self(void);
  * by the library. */
 const char * dccthread_name(dccthread_t *tid);
 
-
-#endif /* DCCTHREAD_H_ */
+#endif

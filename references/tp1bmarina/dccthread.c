@@ -20,8 +20,10 @@ dccthread_t *current, *manager, *main_t;
 struct sigevent t_event;
 struct sigaction t_action, o_action;
 struct itimerspec t_time;
+
 timer_t timer;
 timer_t* sleep_timer;
+struct timespec timer_last_thread;
 
 void dccthread_yield(void);
 void context_init(ucontext_t*);
@@ -102,10 +104,10 @@ void dccthread_sleep(struct timespec ts) {
   bloqueia_interrupcoes();
   dccthread_self()->soneca = ts.tv_sec * 1000000000 + ts.tv_nsec;
   dccthread_self()->status = DORMINDO;
-  if (timerid_sleep == NULL) {
+  if (sleep_timer == NULL) {
     inicializa_soneca();
   }
-  clock_gettime(CLOCK_REALTIME, &ultima_thread_executada);
+  clock_gettime(CLOCK_REALTIME, &timer_last_thread);
 
   gerencia_soneca();
   dccthread_yield();
@@ -165,4 +167,52 @@ void context_init(ucontext_t* context) {
   context->uc_stack.ss_sp = malloc(SIGSTKSZ);
   context->uc_stack.ss_size = SIGSTKSZ;
   context->uc_stack.ss_flags = 0;
+}
+
+void sleep_bootstrap() {
+  sleep_timer = malloc(sizeof(timer_t));
+
+  struct sigevent sig_event_sleep;
+  sleep_timer = create_timer(sig_event_sleep, SIGRTMAX, CLOCK_REALTIME);
+
+  struct sigaction sig_action_sleep;
+  install_sighandler(sig_action_sleep, SIGRTMAX,
+      (void (*)()) sleep_handle);
+}
+
+void sleep_handle() {
+  struct timespec times;
+  clock_gettime(CLOCK_REALTIME, &times);
+  long timeElapsed = (times.tv_sec - timer_last_thread.tv_sec)
+      * 1000000000 + (times.tv_nsec - timer_last_thread.tv_nsec);
+  int i;
+  for (i = 0; i < numThreads; i++) {
+    threads[i]->soneca -= timeElapsed;
+    if (threads[i]->soneca <= 0 && threads[i]->status == DORMINDO) {
+      threads[i]->soneca = 0;
+      threads[i]->status = PRONTA;
+    }
+  }
+  sleep_update();
+}
+
+void sleep_update() {
+  long sleep_clock = LONG_MAX;
+  int i;
+  for (i = 0; i < numThreads; i++) {
+    if (threads[i]->status == DORMINDO
+        && threads[i]->soneca < sleep_clock) {
+      sleep_clock = threads[i]->soneca;
+    }
+  }
+  if (sleep_clock == LONG_MAX) {
+    sleep_clock = 0;
+  }
+
+  its_sleep.it_value.tv_sec = sleep_clock / 1000000000;
+  its_sleep.it_value.tv_nsec = sleep_clock % 1000000000;
+  its_sleep.it_interval.tv_sec = sleep_clock / 1000000000;
+  its_sleep.it_interval.tv_nsec = sleep_clock % 1000000000;
+
+  timer_settime(timerid_sleep, 0, &its_sleep, NULL);
 }
